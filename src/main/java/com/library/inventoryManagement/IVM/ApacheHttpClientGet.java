@@ -26,6 +26,7 @@ public class ApacheHttpClientGet {
 		System.out.println("Got the Output: " + output);
 	}
 
+	/*Just to check the functionality used this call. Not exactly as per the Inventory management. I couldnt get the end points from respective teammates*/
 	public void rentBook() {
 		Client client = Client.create();
 		WebResource webResource = client.resource("http://10.132.126.74:8080/BookRentalApp/webapi/bookrental/rent");

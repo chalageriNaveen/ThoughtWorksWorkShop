@@ -16,8 +16,8 @@ public class ApacheHttpClientGet {
 		Client client = Client.create();
 		WebResource webResource = client.resource("http://10.132.126.74:8080/Library/v1/books");
 
-		ClientResponse response = webResource.accept("application/json").get(ClientResponse.class);
 		String input = "{\"id\":\"100\",\"userId\":\"12345\",\"name\":\"Core java\",\"Author\":\"Andrew Hall\",\"isbn\":\"sc10\",\"genre\":\"CS\",\"price\":\"250\"}";
+		ClientResponse response = webResource.type("application/json").post(ClientResponse.class, input);
 		if (response.getStatus() != 200) {
 			throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 		}
